@@ -28,9 +28,12 @@ module.exports = function (css, src, opts) {
       // remove new lines to simplify parsing
       var minimized = file.replace(/(\r\n|\n|\r)/gm, ' ').replace(/\s{2,}/gm, ' ')
 
-      // find all attribute-like strings: class="..."
-      var re = new RegExp(`(${opts.attr.join('|')})="([^"]+)"`, 'ig')
-      var matches = matchesArr(minimized, re)
+      // find all attribute-like strings: class="..." or class='...'
+      var re1 = new RegExp(`(${opts.attr.join('|')})="([^]+?)"`, 'ig')
+      var re2 = new RegExp(`(${opts.attr.join('|')})='([^]+?)'`, 'ig')
+      var matches1 = matchesArr(minimized, re1)
+      var matches2 = matchesArr(minimized, re2)
+      var matches = matches1.concat(matches2)
 
       // new matching patterns could be added here
       // and the matches arrays would be concat
