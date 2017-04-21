@@ -26,7 +26,8 @@ module.exports = function (css, src, opts) {
   function extractSelectors (files) {
     var selectorArr = files.map(file => {
       // remove new lines to simplify parsing
-      var minimized = file.replace(/(\r\n|\n|\r)/gm,'')
+      var minimized = file.replace(/(\r\n|\n|\r)/gm, ' ').replace(/\s{2,}/gm, ' ')
+      console.log(minimized)
 
       // find all attribute-like strings: class="..."
       var re = new RegExp(`(${opts.attr.join('|')})="([^"]+)"`, 'ig')
