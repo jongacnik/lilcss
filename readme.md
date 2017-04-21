@@ -3,10 +3,10 @@
 Distill out css bloat by parsing static files for selectors
 
 ```
-npm i ??????
+npm i lilcss
 ```
 
-**Warning: This is a work in progress and not quite ready for use...**
+**Warning: This is a work in progress, things might break...**
 
 ## Example
 
