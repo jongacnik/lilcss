@@ -1,12 +1,17 @@
-# lilcss
+<h1 align="center">lilcss ⚗</h1>
+
+<div align="center">
+  <a href="https://nodejs.org/api/documentation.html#documentation_stability_index">
+    <img src="https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square" alt="Stability" />
+  </a>
+  <a href="https://www.npmjs.com/package/lilcss">
+    <img src="https://img.shields.io/npm/v/lilcss.svg?style=flat-square" alt="NPM version" />
+  </a>
+</div>
+
+<br>
 
 Distill out css bloat by parsing static files for selectors
-
-```
-npm i lilcss
-```
-
-**Warning: This is a work in progress, things might break...**
 
 ## Example
 
@@ -107,22 +112,19 @@ Extracted selectors:
 
 Anything which does not match these selectors will be removed from the css.
 
-## FAQ
-
-**Work in progress...**
-
-### Why?
+## Why?
 
 Removing unused css output is important but the existing tools don't work well for my needs. [uncss](https://github.com/giakki/uncss) requires code to be run in a headless browser but this assumes too much about *how* you are building your site. [purifycss](https://github.com/purifycss/purifycss) does a bit better in that it parses static files, but the results are generally unpredictable and attribute selectors are fully unsupported.
 
 `lilcss` has specific requirements but this allows the code to stay small and concise. More functionality may be introduced as needed.
 
-## Todo
-
-- [ ] tests
-- [ ] cli more robust
-- [ ] docs
-
 ## See Also
 
-- [https://github.com/jongacnik/gr8](https://github.com/jongacnik/gr8)
+- [gr8](https://github.com/jongacnik/gr8)
+- [gr8-util](https://github.com/jongacnik/gr8-util)
+- [quick-styles](https://github.com/jongacnik/quick-styles)
+
+## Todo
+
+- [ ] Tests
+- [ ] Better regex (or perhaps ditch and ast this thing)
